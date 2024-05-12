@@ -4,21 +4,14 @@ namespace Author.Signup
 {
     internal sealed class Request
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
         public string UserName { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
     }
     internal sealed class Validator : Validator<Request>
     {
         public Validator()
         {
-            RuleFor(x => x.FirstName)
-            .NotEmpty().WithMessage("your name is required!")
-            .MinimumLength(3).WithMessage("name is too short!")
-            .MaximumLength(25).WithMessage("name is too long!");
-
             RuleFor(x => x.Email)
                 .NotEmpty().WithMessage("email address is required!")
                 .EmailAddress().WithMessage("the format of your email address is wrong!");
@@ -30,11 +23,10 @@ namespace Author.Signup
 
             RuleFor(x => x.Password)
                 .NotEmpty().WithMessage("a password is required!")
-                .MinimumLength(10).WithMessage("password is too short!")
+                .MinimumLength(4).WithMessage("password is too short!")
                 .MaximumLength(25).WithMessage("password is too long!");
         }
     }
-
     internal sealed class Response
     {
         public string Message { get; set; } = string.Empty;

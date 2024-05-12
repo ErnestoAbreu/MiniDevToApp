@@ -2,14 +2,14 @@
 {
     internal sealed class Request
     {
-
+        public string Username { get; set; }
     }
 
     internal sealed class Validator : Validator<Request>
     {
         public Validator()
         {
-
+            
         }
     }
 

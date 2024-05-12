@@ -1,6 +1,6 @@
 ﻿using Microsoft.Identity.Client;
 
-namespace MiniDevToApp.DataBases.Models
+namespace MiniDevToApp.Entities
 {
     internal class Comment
     {

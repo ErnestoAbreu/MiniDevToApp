@@ -1,6 +1,6 @@
 ﻿using Microsoft.Identity.Client;
 
-namespace MiniDevToApp.DataBases.Models
+namespace MiniDevToApp.Entities
 {
     internal class Article
     {
@@ -9,7 +9,6 @@ namespace MiniDevToApp.DataBases.Models
 
         public string? Title { get; set; }
         public string? AuthorName { get; set; }
-        public string? Description { get; set; }
         public string? Content { get; set; }
         public ArticleStatus Status { get; set; }
 
