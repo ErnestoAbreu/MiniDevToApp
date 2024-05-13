@@ -2,8 +2,8 @@
 {
     internal enum ArticleStatus
     {
-        Approved,
         Pending,
+        Approved,
         Rejected
     }
 }

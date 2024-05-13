@@ -2,7 +2,8 @@
 {
     internal sealed class Request
     {
-        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 
     internal sealed class Validator : Validator<Request>
@@ -15,6 +16,7 @@
 
     internal sealed class Response
     {
-        public string Message => "This endpoint hasn't been implemented yet!";
+        public string Message { get; set; }
+
     }
 }

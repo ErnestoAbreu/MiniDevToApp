@@ -10,7 +10,7 @@ namespace MiniDevToApp.Entities
         public string? Title { get; set; }
         public string? AuthorName { get; set; }
         public string? Content { get; set; }
-        public ArticleStatus Status { get; set; }
+        public ArticleStatus Status { get; set; } = ArticleStatus.Pending;
 
         public List<Comment> Comments { get; set; } = new List<Comment>();
     }
