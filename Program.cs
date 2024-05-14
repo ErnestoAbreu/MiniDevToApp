@@ -55,6 +55,18 @@ using (var scope = app.Services.CreateScope())
 
     if (!await roleManager.RoleExistsAsync("Admin"))
         await roleManager.CreateAsync(new IdentityRole("Admin"));
+
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+
+    var admin = userManager.Users.FirstOrDefault(x => x.UserName == "Admin");
+    if (admin == null)
+    {
+        await userManager.CreateAsync(new IdentityUser()
+        {
+            UserName = "Admin",
+        }, "Admin");
+    }
+    await userManager.AddToRoleAsync(admin!, "Admin");
 }
 
 app.Run();
